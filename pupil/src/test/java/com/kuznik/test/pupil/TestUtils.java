@@ -1,4 +1,4 @@
-package com.kuznik.rets.jersey.pupil.test;
+package com.kuznik.test.pupil;
 
 import java.util.Arrays;
 import java.util.Collection;

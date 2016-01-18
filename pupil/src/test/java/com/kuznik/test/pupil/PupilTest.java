@@ -1,4 +1,4 @@
-package com.kuznik.rets.jersey.pupil.test;
+package com.kuznik.test.pupil;
 
 import static org.junit.Assert.assertEquals;
 
