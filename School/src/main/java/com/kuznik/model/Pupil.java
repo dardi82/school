@@ -8,7 +8,13 @@ public class Pupil {
 	public Pupil(String name) {
 		this.name = name;
 	}
-
+	
+	public Pupil(String name, float avgMath, float avgPhysics) {
+		this.name = name;
+		this.avgMath = avgMath;
+		this.avgPhysics = avgPhysics;
+	}
+	
 	public String getName() {
 		return name;
 	}

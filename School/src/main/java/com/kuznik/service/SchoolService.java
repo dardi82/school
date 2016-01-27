@@ -21,12 +21,13 @@ public class SchoolService {
 		this.school = school;
 	}
 
+	@Deprecated
 	public Map<Class, List<Pupil>> getPrimusOfSubject(Subject subject) {
 		Map<Class, List<Pupil>> map = new HashMap<>();
-		if (school != null && school.getClassList() != null) {
+		if (school != null) {
 			for (Class clazz : school.getClassList()) {
 				List<Pupil> primusPupilList = new LinkedList<>();
-				if (clazz.getPupilList() != null && !clazz.getPupilList().isEmpty()) {
+				if (!clazz.getPupilList().isEmpty()) {
 					Pupil primusPupil = clazz.getPupilList().get(0);
 					for (Pupil pupil : clazz.getPupilList()) {
 						int compare = Float.compare(pupil.getAvgSubject(subject), primusPupil.getAvgSubject(subject));
@@ -41,6 +42,14 @@ public class SchoolService {
 				}
 				map.put(clazz, primusPupilList);
 			}
+		}
+		return map;
+	}
+	
+	public Map<Class, Pupil> getOnePrimusOfSubjectPerClass(Subject subject) {
+		Map<Class, Pupil> map = new HashMap<>();
+		if(school != null){
+			map.putAll(school.getPrimusOfSubject(subject));
 		}
 		return map;
 	}
